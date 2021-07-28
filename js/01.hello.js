@@ -29,12 +29,15 @@ function run() { } // 함수 선언
 
 var a = 5;
 var b = 10;
+// 매개변수가 없는 함수
 function sum() {
 	console.log(a + b);
 }
 
+// 매개변수가 있는 함수
 // onclick="alertMe('booldook', 5);"
 function alertMe(a, b) {
+	// a, b => 인자/매개변수/parameter 
 	console.log(a, b);
 }
 
