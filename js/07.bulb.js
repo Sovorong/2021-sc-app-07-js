@@ -13,3 +13,16 @@ function toggleBulb(chk) {
 		btOff.style.display = 'none';
 	}
 }
+
+function toggleBulb2(chk) {
+	var bulbOn = document.getElementById('bulbOn');
+	var bulbOff = document.getElementById('bulbOff');
+	if(chk) {
+		bulbOn.style.display = 'none';
+		bulbOff.style.display = 'inline-block';
+	}
+	else {
+		bulbOn.style.display = 'inline-block';
+		bulbOff.style.display = 'none';
+	}
+}
