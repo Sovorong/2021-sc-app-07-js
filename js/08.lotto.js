@@ -78,6 +78,7 @@ console.clear();
 function choiceLotto() {
 	var numbers = [];
 	var lotto = new Array();
+	var lottoEl = document.getElementById('lotto');
 	
 	for(var i=1; i<=45; i++) numbers.push(i);
 	// for(; lotto.length < 6;) {
@@ -85,6 +86,9 @@ function choiceLotto() {
 		var idx = random(0, 45); // Math.floor(Math.random * 45) + 0;
 		if( lotto.indexOf(numbers[idx]) === -1 ) lotto.push(numbers[idx]);
 	} // while(조건) {  조건이 참일때까지 반복, 반복회수 제한이 애매할때 }
-	
+	lottoEl.innerHTML = '';
+	for(var i=0; i<6; i++) {
+		lottoEl.innerHTML += '<li>'+lotto[i]+'</li>';
+	}
 }
 
