@@ -7,6 +7,7 @@ Array
 - arr.pop(): 배열의 맨 뒤의 값을 뽑아낸다(배열이 변한다);
 - arr.shift(): 배열의 맨 앞의 값을 뽑아낸다(배열이 변한다);
 - arr.splice(idx, 빼고싶은 갯수, 넣을 값): 배열의 중간에 값을 넣거나 빼거나 교체한다.
+- arr.indexOf(값): 값이 위치한 index값을 리턴한다. 만약 값이 없으면 -1을 리턴한다.
 */
 
 // console.log( Math.abs(-1) );		// 절대값
@@ -60,9 +61,30 @@ console.log( fruits );													// ['apple', 'cherry']
 var fruits = ['apple', 'banana', 'cherry'];
 // 값을 교체 함
 console.log( fruits.splice(1, 1, 'melon', 'orange') );	// ['banana']
-console.log( fruits );																	// ['apple', 'melon', 'orange' 'cherry']
+console.log( fruits );																// ['apple', 'melon', 'orange' 'cherry']
 
 var fruits = ['apple', 'banana', 'cherry'];
 // 값을 교체 함
 console.log( fruits.splice(1, 2, 'melon', 'orange') );	// ['banana', 'cherry']
 console.log( fruits );																	// ['apple', 'melon', 'orange']
+
+var fruits = ['apple', 'banana', 'cherry'];
+// 값을 찾아냄
+console.log( fruits.indexOf('melon') );
+
+console.clear();
+
+/**************** 로또 프로그램 *****************/
+function choiceLotto() {
+	var numbers = [];
+	var lotto = new Array();
+	
+	for(var i=1; i<=45; i++) numbers.push(i);
+	// for(; lotto.length < 6;) {
+	while(lotto.length < 6) {
+		var idx = random(0, 45); // Math.floor(Math.random * 45) + 0;
+		if( lotto.indexOf(numbers[idx]) === -1 ) lotto.push(numbers[idx]);
+	} // while(조건) {  조건이 참일때까지 반복, 반복회수 제한이 애매할때 }
+	
+}
+
